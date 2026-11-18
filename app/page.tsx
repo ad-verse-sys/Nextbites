@@ -1,4 +1,4 @@
-import RecipeCard from "./components/RecipeCard";
+import RecipeGrid from "./components/RecipeGrid";
 import { recipes } from "./data/recipes";
 
 export default function Home() {
@@ -10,12 +10,7 @@ export default function Home() {
       <p className="hero-sub">
         {recipes.length} recipes to browse, search, and cook. Pick one and get the full method.
       </p>
-      <input className="search" type="search" placeholder="Search recipes or cuisines…" disabled />
-      <div className="grid">
-        {recipes.map((recipe) => (
-          <RecipeCard key={recipe.id} recipe={recipe} />
-        ))}
-      </div>
+      <RecipeGrid recipes={recipes} />
     </>
   );
 }
